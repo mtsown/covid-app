@@ -1,17 +1,16 @@
 import React, { useEffect } from 'react';
-import { View, Text } from 'react-native';
 
 import SplashScreen from 'react-native-splash-screen';
-import Onboarding from './src/screens/Onboarding';
+import RootNavigator from './src/routes/RootNavigator';
 
 const App = () => {
   useEffect(() => {
     setTimeout(() => {
       SplashScreen.hide();
-    }, 2000);
+    }, 1000);
   }, []);
 
-  return (<Onboarding />);
+  return (<RootNavigator />);
 };
 
 export default App;

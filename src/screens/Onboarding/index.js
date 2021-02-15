@@ -1,7 +1,9 @@
 import React from 'react';
-import { View, Image, Text } from 'react-native';
+import { View, Image, Text, Pressable } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import AppIntroSlider from 'react-native-app-intro-slider';
 
+import { SCREENS_NAVIGATION } from '../../constants/navigation';
 import styles from './styles';
 
 const slides = [
@@ -32,6 +34,8 @@ const gradient = require('../../assets/images/onboarding-gradient.png');
 const nextButton = require('../../assets/images/onboarding-next.png');
 
 const Onboarding = () => {
+  const navigation = useNavigation();
+
   const handleRenderItem = ({ item }) => {
     return (
       <View style={styles.slide}>
@@ -42,14 +46,23 @@ const Onboarding = () => {
         <View style={styles.gradientContainer}>
           <Image source={gradient} style={styles.gradient} />
         </View>
-
       </View>
     );
   };
 
-  const renderButton = () => {
+  const renderNextButton = () => {
     return (
       <Image source={nextButton} style={styles.nextButton} />
+    );
+  };
+
+  const renderDoneButton = () => {
+    return (
+      <Pressable onPress={() => navigation.navigate(SCREENS_NAVIGATION.HOME_SCREEN)}>
+        <View>
+          <Image source={nextButton} style={styles.nextButton} />
+        </View>
+      </Pressable>
     );
   };
 
@@ -58,8 +71,8 @@ const Onboarding = () => {
       renderItem={handleRenderItem}
       data={slides}
       bottomButton={true}
-      renderNextButton={renderButton}
-      renderDoneButton={renderButton}
+      renderNextButton={renderNextButton}
+      renderDoneButton={renderDoneButton}
       dotStyle={styles.dot}
       activeDotStyle={styles.activeDot}
     />
