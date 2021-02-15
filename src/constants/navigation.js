@@ -1,0 +1,2 @@
+export const APP_STACK = 'APP_STACK';
+export const ONBOARDING_SCREEN = 'ONBOARDING_SCREEN';

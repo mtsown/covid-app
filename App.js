@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { View, Text } from 'react-native';
 
 import SplashScreen from 'react-native-splash-screen';
+import Onboarding from './src/screens/Onboarding';
 
 const App = () => {
   useEffect(() => {
@@ -10,7 +11,7 @@ const App = () => {
     }, 2000);
   }, []);
 
-  return (<View><Text>Home</Text></View>);
+  return (<Onboarding />);
 };
 
 export default App;
