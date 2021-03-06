@@ -3,6 +3,7 @@ import {
   COLOR_TEXT_PRIMARY,
   COLOR_TEXT_SECONDARY,
   COLOR_BACKGROUND,
+  COLOR_BACKGROUND_BUTTON_PRIMARY,
   COLOR_PAGINATION_DOT,
   COLOR_PAGINATION_DOT_ACTIVE,
 } from '../../constants/colors';
@@ -22,6 +23,7 @@ const styles = StyleSheet.create({
     lineHeight: 41,
     textAlign: 'center',
     color: COLOR_TEXT_PRIMARY,
+    marginTop: '8%',
   },
   subTitle: {
     fontFamily: 'BeVietnam-Regular',
@@ -51,7 +53,7 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
     marginBottom: '-7.8%',
-    marginTop: 120,
+    marginTop: '52.2%',
   },
   dot: {
     width: 6.92,
